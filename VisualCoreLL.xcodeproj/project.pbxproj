@@ -8,20 +8,87 @@
 
 /* Begin PBXBuildFile section */
 		174185421FDCAE1800B1EF7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174185411FDCAE1800B1EF7C /* AppDelegate.swift */; };
-		174185441FDCAE1800B1EF7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174185431FDCAE1800B1EF7C /* ViewController.swift */; };
-		174185471FDCAE1800B1EF7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 174185451FDCAE1800B1EF7C /* Main.storyboard */; };
+		174185441FDCAE1800B1EF7C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174185431FDCAE1800B1EF7C /* MainViewController.swift */; };
 		174185491FDCAE1800B1EF7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 174185481FDCAE1800B1EF7C /* Assets.xcassets */; };
 		1741854C1FDCAE1800B1EF7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1741854A1FDCAE1800B1EF7C /* LaunchScreen.storyboard */; };
+		174185611FDCAE9B00B1EF7C /* CoreLL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 174185581FDCAE9B00B1EF7C /* CoreLL.framework */; };
+		174185681FDCAE9B00B1EF7C /* CoreLLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174185671FDCAE9B00B1EF7C /* CoreLLTests.swift */; };
+		1741856A1FDCAE9B00B1EF7C /* CoreLL.h in Headers */ = {isa = PBXBuildFile; fileRef = 1741855A1FDCAE9B00B1EF7C /* CoreLL.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1741856D1FDCAE9B00B1EF7C /* CoreLL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 174185581FDCAE9B00B1EF7C /* CoreLL.framework */; };
+		1741856E1FDCAE9B00B1EF7C /* CoreLL.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 174185581FDCAE9B00B1EF7C /* CoreLL.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		174D5A2B1FE05B5A007CF3AE /* _CoreLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174D5A2A1FE05B5A007CF3AE /* _CoreLinkedList.swift */; };
+		174D5A2D1FE05D2E007CF3AE /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174D5A2C1FE05D2E007CF3AE /* Protocols.swift */; };
+		174D5A301FE0680F007CF3AE /* CoreLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174D5A2F1FE0680F007CF3AE /* CoreLinkedList.swift */; };
+		174D5A321FE06B68007CF3AE /* TestableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174D5A311FE06B68007CF3AE /* TestableType.swift */; };
+		17D1798B1FE3081C009F2CFB /* PrototypeLLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1798A1FE3081C009F2CFB /* PrototypeLLView.swift */; };
+		17D1798D1FE30831009F2CFB /* PrototypeLLView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17D1798C1FE30831009F2CFB /* PrototypeLLView.xib */; };
+		17D1798F1FE30984009F2CFB /* VisualLLNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1798E1FE30984009F2CFB /* VisualLLNode.swift */; };
+		17D179931FE31615009F2CFB /* Bundle+VisualCoreLL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D179921FE31615009F2CFB /* Bundle+VisualCoreLL.swift */; };
+		17D179971FE32276009F2CFB /* PrototypeLLViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D179961FE32276009F2CFB /* PrototypeLLViewDelegate.swift */; };
+		17D179991FE3230C009F2CFB /* PrototypeLLViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D179981FE3230C009F2CFB /* PrototypeLLViewDatasource.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		174185621FDCAE9B00B1EF7C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 174185361FDCAE1800B1EF7C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 174185571FDCAE9B00B1EF7C;
+			remoteInfo = CoreLL;
+		};
+		174185641FDCAE9B00B1EF7C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 174185361FDCAE1800B1EF7C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1741853D1FDCAE1800B1EF7C;
+			remoteInfo = VisualCoreLL;
+		};
+		1741856B1FDCAE9B00B1EF7C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 174185361FDCAE1800B1EF7C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 174185571FDCAE9B00B1EF7C;
+			remoteInfo = CoreLL;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		174185741FDCAE9B00B1EF7C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1741856E1FDCAE9B00B1EF7C /* CoreLL.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1741853E1FDCAE1800B1EF7C /* VisualCoreLL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisualCoreLL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		174185411FDCAE1800B1EF7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		174185431FDCAE1800B1EF7C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		174185461FDCAE1800B1EF7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		174185431FDCAE1800B1EF7C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		174185481FDCAE1800B1EF7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1741854B1FDCAE1800B1EF7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1741854D1FDCAE1800B1EF7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		174185581FDCAE9B00B1EF7C /* CoreLL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoreLL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1741855A1FDCAE9B00B1EF7C /* CoreLL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreLL.h; sourceTree = "<group>"; };
+		1741855B1FDCAE9B00B1EF7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		174185601FDCAE9B00B1EF7C /* CoreLLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreLLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		174185671FDCAE9B00B1EF7C /* CoreLLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLLTests.swift; sourceTree = "<group>"; };
+		174185691FDCAE9B00B1EF7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		174D5A2A1FE05B5A007CF3AE /* _CoreLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _CoreLinkedList.swift; sourceTree = "<group>"; };
+		174D5A2C1FE05D2E007CF3AE /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		174D5A2F1FE0680F007CF3AE /* CoreLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLinkedList.swift; sourceTree = "<group>"; };
+		174D5A311FE06B68007CF3AE /* TestableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestableType.swift; sourceTree = "<group>"; };
+		17D1798A1FE3081C009F2CFB /* PrototypeLLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeLLView.swift; sourceTree = "<group>"; };
+		17D1798C1FE30831009F2CFB /* PrototypeLLView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrototypeLLView.xib; sourceTree = "<group>"; };
+		17D1798E1FE30984009F2CFB /* VisualLLNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualLLNode.swift; sourceTree = "<group>"; };
+		17D179921FE31615009F2CFB /* Bundle+VisualCoreLL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+VisualCoreLL.swift"; sourceTree = "<group>"; };
+		17D179961FE32276009F2CFB /* PrototypeLLViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeLLViewDelegate.swift; sourceTree = "<group>"; };
+		17D179981FE3230C009F2CFB /* PrototypeLLViewDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeLLViewDatasource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +96,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1741856D1FDCAE9B00B1EF7C /* CoreLL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		174185541FDCAE9B00B1EF7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1741855D1FDCAE9B00B1EF7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				174185611FDCAE9B00B1EF7C /* CoreLL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,6 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				174185401FDCAE1800B1EF7C /* VisualCoreLL */,
+				174185591FDCAE9B00B1EF7C /* CoreLL */,
+				174185661FDCAE9B00B1EF7C /* CoreLLTests */,
 				1741853F1FDCAE1800B1EF7C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				1741853E1FDCAE1800B1EF7C /* VisualCoreLL.app */,
+				174185581FDCAE9B00B1EF7C /* CoreLL.framework */,
+				174185601FDCAE9B00B1EF7C /* CoreLLTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -54,9 +141,12 @@
 		174185401FDCAE1800B1EF7C /* VisualCoreLL */ = {
 			isa = PBXGroup;
 			children = (
+				17D179911FE315F3009F2CFB /* Extension */,
+				174D5A331FE07F34007CF3AE /* Protocol */,
+				174185781FDCAEDF00B1EF7C /* Model */,
+				174185771FDCAED800B1EF7C /* View */,
+				174185761FDCAED000B1EF7C /* Controller */,
 				174185411FDCAE1800B1EF7C /* AppDelegate.swift */,
-				174185431FDCAE1800B1EF7C /* ViewController.swift */,
-				174185451FDCAE1800B1EF7C /* Main.storyboard */,
 				174185481FDCAE1800B1EF7C /* Assets.xcassets */,
 				1741854A1FDCAE1800B1EF7C /* LaunchScreen.storyboard */,
 				1741854D1FDCAE1800B1EF7C /* Info.plist */,
@@ -64,7 +154,106 @@
 			path = VisualCoreLL;
 			sourceTree = "<group>";
 		};
+		174185591FDCAE9B00B1EF7C /* CoreLL */ = {
+			isa = PBXGroup;
+			children = (
+				174D5A2E1FE05D37007CF3AE /* Protocols */,
+				1741857A1FDCAF2500B1EF7C /* API */,
+				174185791FDCAF1C00B1EF7C /* Core */,
+				1741855A1FDCAE9B00B1EF7C /* CoreLL.h */,
+				1741855B1FDCAE9B00B1EF7C /* Info.plist */,
+			);
+			path = CoreLL;
+			sourceTree = "<group>";
+		};
+		174185661FDCAE9B00B1EF7C /* CoreLLTests */ = {
+			isa = PBXGroup;
+			children = (
+				174D5A311FE06B68007CF3AE /* TestableType.swift */,
+				174185671FDCAE9B00B1EF7C /* CoreLLTests.swift */,
+				174185691FDCAE9B00B1EF7C /* Info.plist */,
+			);
+			path = CoreLLTests;
+			sourceTree = "<group>";
+		};
+		174185761FDCAED000B1EF7C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				174185431FDCAE1800B1EF7C /* MainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		174185771FDCAED800B1EF7C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				17D1798A1FE3081C009F2CFB /* PrototypeLLView.swift */,
+				17D1798C1FE30831009F2CFB /* PrototypeLLView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		174185781FDCAEDF00B1EF7C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				17D1798E1FE30984009F2CFB /* VisualLLNode.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		174185791FDCAF1C00B1EF7C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				174D5A2A1FE05B5A007CF3AE /* _CoreLinkedList.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		1741857A1FDCAF2500B1EF7C /* API */ = {
+			isa = PBXGroup;
+			children = (
+				174D5A2F1FE0680F007CF3AE /* CoreLinkedList.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		174D5A2E1FE05D37007CF3AE /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				174D5A2C1FE05D2E007CF3AE /* Protocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		174D5A331FE07F34007CF3AE /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				17D179981FE3230C009F2CFB /* PrototypeLLViewDatasource.swift */,
+				17D179961FE32276009F2CFB /* PrototypeLLViewDelegate.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		17D179911FE315F3009F2CFB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				17D179921FE31615009F2CFB /* Bundle+VisualCoreLL.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		174185551FDCAE9B00B1EF7C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1741856A1FDCAE9B00B1EF7C /* CoreLL.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		1741853D1FDCAE1800B1EF7C /* VisualCoreLL */ = {
@@ -74,15 +263,54 @@
 				1741853A1FDCAE1800B1EF7C /* Sources */,
 				1741853B1FDCAE1800B1EF7C /* Frameworks */,
 				1741853C1FDCAE1800B1EF7C /* Resources */,
+				174185741FDCAE9B00B1EF7C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1741856C1FDCAE9B00B1EF7C /* PBXTargetDependency */,
 			);
 			name = VisualCoreLL;
 			productName = VisualCoreLL;
 			productReference = 1741853E1FDCAE1800B1EF7C /* VisualCoreLL.app */;
 			productType = "com.apple.product-type.application";
+		};
+		174185571FDCAE9B00B1EF7C /* CoreLL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 174185731FDCAE9B00B1EF7C /* Build configuration list for PBXNativeTarget "CoreLL" */;
+			buildPhases = (
+				174185531FDCAE9B00B1EF7C /* Sources */,
+				174185541FDCAE9B00B1EF7C /* Frameworks */,
+				174185551FDCAE9B00B1EF7C /* Headers */,
+				174185561FDCAE9B00B1EF7C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoreLL;
+			productName = CoreLL;
+			productReference = 174185581FDCAE9B00B1EF7C /* CoreLL.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		1741855F1FDCAE9B00B1EF7C /* CoreLLTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 174185751FDCAE9B00B1EF7C /* Build configuration list for PBXNativeTarget "CoreLLTests" */;
+			buildPhases = (
+				1741855C1FDCAE9B00B1EF7C /* Sources */,
+				1741855D1FDCAE9B00B1EF7C /* Frameworks */,
+				1741855E1FDCAE9B00B1EF7C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				174185631FDCAE9B00B1EF7C /* PBXTargetDependency */,
+				174185651FDCAE9B00B1EF7C /* PBXTargetDependency */,
+			);
+			name = CoreLLTests;
+			productName = CoreLLTests;
+			productReference = 174185601FDCAE9B00B1EF7C /* CoreLLTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -97,6 +325,16 @@
 					1741853D1FDCAE1800B1EF7C = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+					};
+					174185571FDCAE9B00B1EF7C = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
+					};
+					1741855F1FDCAE9B00B1EF7C = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1741853D1FDCAE1800B1EF7C;
 					};
 				};
 			};
@@ -114,6 +352,8 @@
 			projectRoot = "";
 			targets = (
 				1741853D1FDCAE1800B1EF7C /* VisualCoreLL */,
+				174185571FDCAE9B00B1EF7C /* CoreLL */,
+				1741855F1FDCAE9B00B1EF7C /* CoreLLTests */,
 			);
 		};
 /* End PBXProject section */
@@ -123,9 +363,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17D1798D1FE30831009F2CFB /* PrototypeLLView.xib in Resources */,
 				1741854C1FDCAE1800B1EF7C /* LaunchScreen.storyboard in Resources */,
 				174185491FDCAE1800B1EF7C /* Assets.xcassets in Resources */,
-				174185471FDCAE1800B1EF7C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		174185561FDCAE9B00B1EF7C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1741855E1FDCAE9B00B1EF7C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,22 +390,56 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				174185441FDCAE1800B1EF7C /* ViewController.swift in Sources */,
+				174185441FDCAE1800B1EF7C /* MainViewController.swift in Sources */,
+				17D1798B1FE3081C009F2CFB /* PrototypeLLView.swift in Sources */,
 				174185421FDCAE1800B1EF7C /* AppDelegate.swift in Sources */,
+				17D1798F1FE30984009F2CFB /* VisualLLNode.swift in Sources */,
+				17D179931FE31615009F2CFB /* Bundle+VisualCoreLL.swift in Sources */,
+				17D179991FE3230C009F2CFB /* PrototypeLLViewDatasource.swift in Sources */,
+				17D179971FE32276009F2CFB /* PrototypeLLViewDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		174185531FDCAE9B00B1EF7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				174D5A2B1FE05B5A007CF3AE /* _CoreLinkedList.swift in Sources */,
+				174D5A301FE0680F007CF3AE /* CoreLinkedList.swift in Sources */,
+				174D5A2D1FE05D2E007CF3AE /* Protocols.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1741855C1FDCAE9B00B1EF7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				174185681FDCAE9B00B1EF7C /* CoreLLTests.swift in Sources */,
+				174D5A321FE06B68007CF3AE /* TestableType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		174185451FDCAE1800B1EF7C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				174185461FDCAE1800B1EF7C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
+/* Begin PBXTargetDependency section */
+		174185631FDCAE9B00B1EF7C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 174185571FDCAE9B00B1EF7C /* CoreLL */;
+			targetProxy = 174185621FDCAE9B00B1EF7C /* PBXContainerItemProxy */;
 		};
+		174185651FDCAE9B00B1EF7C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1741853D1FDCAE1800B1EF7C /* VisualCoreLL */;
+			targetProxy = 174185641FDCAE9B00B1EF7C /* PBXContainerItemProxy */;
+		};
+		1741856C1FDCAE9B00B1EF7C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 174185571FDCAE9B00B1EF7C /* CoreLL */;
+			targetProxy = 1741856B1FDCAE9B00B1EF7C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
 		1741854A1FDCAE1800B1EF7C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -273,6 +561,7 @@
 		174185511FDCAE1800B1EF7C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KZ59LHH5H4;
@@ -288,6 +577,7 @@
 		174185521FDCAE1800B1EF7C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KZ59LHH5H4;
@@ -297,6 +587,89 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1741856F1FDCAE9B00B1EF7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = KZ59LHH5H4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CoreLL/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.uniba.CoreLL;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		174185701FDCAE9B00B1EF7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = KZ59LHH5H4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CoreLL/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.uniba.CoreLL;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		174185711FDCAE9B00B1EF7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KZ59LHH5H4;
+				INFOPLIST_FILE = CoreLLTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.uniba.CoreLLTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VisualCoreLL.app/VisualCoreLL";
+			};
+			name = Debug;
+		};
+		174185721FDCAE9B00B1EF7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KZ59LHH5H4;
+				INFOPLIST_FILE = CoreLLTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.uniba.CoreLLTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VisualCoreLL.app/VisualCoreLL";
 			};
 			name = Release;
 		};
@@ -317,6 +690,24 @@
 			buildConfigurations = (
 				174185511FDCAE1800B1EF7C /* Debug */,
 				174185521FDCAE1800B1EF7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		174185731FDCAE9B00B1EF7C /* Build configuration list for PBXNativeTarget "CoreLL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1741856F1FDCAE9B00B1EF7C /* Debug */,
+				174185701FDCAE9B00B1EF7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		174185751FDCAE9B00B1EF7C /* Build configuration list for PBXNativeTarget "CoreLLTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				174185711FDCAE9B00B1EF7C /* Debug */,
+				174185721FDCAE9B00B1EF7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
