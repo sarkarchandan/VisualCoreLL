@@ -9,11 +9,12 @@
 import UIKit
 import CoreLL
 
-class MainViewController: UIViewController, PrototypeLLViewDatasource,PrototypeLLViewDelegate {
+class MainViewController: UIViewController,PrototypeLLViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationController()
+        prepareListForDisplay()
         setupDrawableView()
     }
     
@@ -26,7 +27,6 @@ class MainViewController: UIViewController, PrototypeLLViewDatasource,PrototypeL
     private func setupDrawableView() {
         let prototypeView = Bundle.visualCoreBundle.loadNibNamed(PrototypeLLView.nibName, owner: nibName, options: nil)!.first as! PrototypeLLView
         prototypeView.translatesAutoresizingMaskIntoConstraints = false
-        prototypeView.backgroundColor = .lightGray
         view.addSubview(prototypeView)
         
         if #available(iOS 11.0, *) {
@@ -42,21 +42,39 @@ class MainViewController: UIViewController, PrototypeLLViewDatasource,PrototypeL
             prototypeView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         }
         
-        prototypeView.datasource = self
+        prototypeView.list = list
         prototypeView.delegate = self
-    }
-    
+    }    
     //MARK: Implementation - PrototypeLLViewDatasource
-    func prototypeLLView(drawIn view: PrototypeLLView) -> CoreLinkedList<VisualLLNode> {
-        let center = CGPoint(x: view.bounds.midX, y: 30.0)
-        let drawableNode = Node(with: VisualLLNode(center:  center, radius: 20.0, lineWidth: 2.0, arcColor: .red))
-        let list = CoreLinkedList(with: drawableNode)
-        return list
+    func prepareListForDisplay() {
+        
+        let drawableNode1 = Node(with: VisualLLNode(radius: 40.0, lineWidth: 3.0, arcColor: .red))
+        
+        let drawableNode2 = Node(with: VisualLLNode(radius: 40.0, lineWidth: 3.0, arcColor: .green))
+        
+        let drawableNode3 = Node(with: VisualLLNode(radius: 40.0, lineWidth: 3.0, arcColor: .blue))
+        
+        let drawableNode4 = Node(with: VisualLLNode(radius: 40.0, lineWidth: 3.0, arcColor: .magenta))
+        
+        let drawableNode5 = Node(with: VisualLLNode(radius: 40.0, lineWidth: 3.0, arcColor: .cyan))
+        
+        let drawableNode6 = Node(with: VisualLLNode(radius: 40.0, lineWidth: 3.0, arcColor: .darkGray))
+        
+        let list = CoreLinkedList(with: drawableNode1)
+        list.append(drawableNode2)
+        list.append(drawableNode3)
+        list.append(drawableNode4)
+        list.append(drawableNode5)
+        list.append(drawableNode6)
+        self.list = list
     }
     
     //MARK: Implementation - PrototypeLLViewDelegate
-    func prototypeLLViewDrwableOrderDidChange(_ view: PrototypeLLView) {
-        fatalError("prototypeLLViewDrwableOrderDidChange(_:) is not implemented")
+    func prototypeLLViewDrawableOrderDidChange(_ view: PrototypeLLView) {
+        list.reversed()
+        view.list = list
     }
+    
+    private var list: CoreLinkedList<VisualLLNode>!
 }
 

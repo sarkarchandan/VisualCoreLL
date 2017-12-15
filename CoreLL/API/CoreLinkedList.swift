@@ -23,10 +23,6 @@ public class Node<NodeType: Hashable>: _CoreNode,Hashable,CustomStringConvertibl
         return true
     }
     
-    public var value: NodeType {
-        return identifier
-    }
-    
     public var hashValue: Int {
         return identifier.hashValue
     }
@@ -35,9 +31,9 @@ public class Node<NodeType: Hashable>: _CoreNode,Hashable,CustomStringConvertibl
         return "Node: \(identifier)"
     }
     
-    var identifier: NodeType
-    var previous: Node<NodeType>?
-    var next: Node<NodeType>?
+    public var identifier: NodeType
+    public var previous: Node<NodeType>?
+    public var next: Node<NodeType>?
 }
 
 public class CoreLinkedList<NodeType: Hashable>: _CoreLinkedListType {

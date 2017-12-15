@@ -10,5 +10,5 @@ import Foundation
 
 protocol PrototypeLLViewDelegate: class {
     
-    func prototypeLLViewDrwableOrderDidChange(_ view: PrototypeLLView)
+    func prototypeLLViewDrawableOrderDidChange(_ view: PrototypeLLView)
 }
