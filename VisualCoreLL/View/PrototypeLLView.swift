@@ -69,14 +69,14 @@ class PrototypeLLView: UIView,PrototypeLLViewDrawable {
                 
             case .portrait:
                 let lineStartPoint = CGPoint(x: arcCoordinateX, y: (arcCoordinateY + node.identifier.radius + 5))
-                let lineEndPoint = CGPoint(x: arcCoordinateX, y: (arcCoordinateY + node.identifier.radius + VisualLLNode.defaultGapBetweenNodes - 5))
+                let lineEndPoint = CGPoint(x: arcCoordinateX, y: (arcCoordinateY + node.identifier.radius + VisualLLNode.defaultGapBetweenNodes - VisualLLNode.defaultLineGap))
                 linePath = UIBezierPath()
                 linePath.move(to: lineStartPoint)
                 linePath.addLine(to: lineEndPoint)
                 
             case .landscape:
                 let lineStartPoint = CGPoint(x: (arcCoordinateX + node.identifier.radius + 5), y: arcCoordinateY)
-                let lineEndPoint = CGPoint(x: (arcCoordinateX + node.identifier.radius + VisualLLNode.defaultGapBetweenNodes - 5), y: arcCoordinateY)
+                let lineEndPoint = CGPoint(x: (arcCoordinateX + node.identifier.radius + VisualLLNode.defaultGapBetweenNodes - VisualLLNode.defaultLineGap), y: arcCoordinateY)
                 linePath = UIBezierPath()
                 linePath.move(to: lineStartPoint)
                 linePath.addLine(to: lineEndPoint)

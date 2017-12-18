@@ -35,4 +35,5 @@ class VisualLLNode: Hashable,CustomStringConvertible  {
     static let endAngle: CGFloat = 2 * .pi
     static let defaultGapBetweenNodes: CGFloat = 30.0
     static let defaultLinkColor: UIColor = .darkGray
+    static let defaultLineGap: CGFloat = 5.0
 }
