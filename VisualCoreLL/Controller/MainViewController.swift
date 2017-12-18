@@ -54,17 +54,17 @@ class MainViewController: UIViewController,PrototypeLLViewDelegate {
     
     private func prepareListForDisplay() {
         
-        let drawableNode1 = Node(with: VisualLLNode(radius: 35.0, arcColor: .red))
+        let drawableNode1 = Node(with: ModelType(radius: 35.0, arcColor: .red))
         
-        let drawableNode2 = Node(with: VisualLLNode(radius: 35.0, arcColor: .green))
+        let drawableNode2 = Node(with: ModelType(radius: 35.0, arcColor: .green))
         
-        let drawableNode3 = Node(with: VisualLLNode(radius: 35.0, arcColor: .blue))
+        let drawableNode3 = Node(with: ModelType(radius: 35.0, arcColor: .blue))
         
-        let drawableNode4 = Node(with: VisualLLNode(radius: 35.0, arcColor: .magenta))
+        let drawableNode4 = Node(with: ModelType(radius: 35.0, arcColor: .magenta))
         
-        let drawableNode5 = Node(with: VisualLLNode(radius: 35.0, arcColor: .cyan))
+        let drawableNode5 = Node(with: ModelType(radius: 35.0, arcColor: .cyan))
         
-        let drawableNode6 = Node(with: VisualLLNode(radius: 35.0,arcColor: .darkGray))
+        let drawableNode6 = Node(with: ModelType(radius: 35.0,arcColor: .darkGray))
         
         let list = CoreLinkedList(with: drawableNode1)
         
@@ -92,6 +92,6 @@ class MainViewController: UIViewController,PrototypeLLViewDelegate {
     }
     
     private var prototypeLLView: PrototypeLLView!
-    private var list: CoreLinkedList<VisualLLNode>!
+    private var list: CoreLinkedList<ModelType>!
 }
 

@@ -16,7 +16,7 @@ enum DeviceOrientation {
 
 class PrototypeLLView: UIView,PrototypeLLViewDrawable {
     
-    public var list: CoreLinkedList<VisualLLNode>! {
+    public var list: CoreLinkedList<ModelType>! {
         didSet {
             setNeedsDisplay()
             registerSwipeGestureRecognizer()
@@ -89,9 +89,9 @@ class PrototypeLLView: UIView,PrototypeLLViewDrawable {
             
             switch orientation {
             case .portrait:
-                arcCoordinateY += 2 * node.identifier.radius + VisualLLNode.defaultGapBetweenNodes
+                arcCoordinateY += 2 * node.identifier.radius + ModelType.defaultGapBetweenNodes
             case .landscape:
-                arcCoordinateX += 2 * node.identifier.radius + VisualLLNode.defaultGapBetweenNodes
+                arcCoordinateX += 2 * node.identifier.radius + ModelType.defaultGapBetweenNodes
             }
         }
     }
@@ -103,75 +103,75 @@ class PrototypeLLView: UIView,PrototypeLLViewDrawable {
     }
     
     
-    private func drawMainArcForNode(_ center: CGPoint, _ node: Node<VisualLLNode>) {
-        let arcPath = UIBezierPath(arcCenter: center, radius: node.identifier.radius, startAngle: VisualLLNode.defaultStartAngle, endAngle: VisualLLNode.defaultEndAngle, clockwise: true)
+    private func drawMainArcForNode(_ center: CGPoint, _ node: Node<ModelType>) {
+        let arcPath = UIBezierPath(arcCenter: center, radius: node.identifier.radius, startAngle: ModelType.defaultStartAngle, endAngle: ModelType.defaultEndAngle, clockwise: true)
         node.identifier.arcColor.setFill()
         arcPath.fill()
     }
     
     
-    private func drawAccessoryArcForPreviousInPortrait(_ arcCoordinateX: CGFloat, _ node: Node<VisualLLNode>, _ arcCoordinateY: CGFloat, _ previous: Node<VisualLLNode>) {
+    private func drawAccessoryArcForPreviousInPortrait(_ arcCoordinateX: CGFloat, _ node: Node<ModelType>, _ arcCoordinateY: CGFloat, _ previous: Node<ModelType>) {
         let leftArcCenterPoint = CGPoint(x: (arcCoordinateX - ((3  * node.identifier.radius) / 2)), y: arcCoordinateY)
         
-        let leftArcPath = UIBezierPath(arcCenter: leftArcCenterPoint, radius: node.identifier.accessoryRadius, startAngle: VisualLLNode.defaultStartAngle, endAngle: VisualLLNode.defaultEndAngle, clockwise: false)
+        let leftArcPath = UIBezierPath(arcCenter: leftArcCenterPoint, radius: node.identifier.accessoryRadius, startAngle: ModelType.defaultStartAngle, endAngle: ModelType.defaultEndAngle, clockwise: false)
         
         previous.identifier.arcColor.setFill()
         leftArcPath.fill()
     }
     
     
-    private func drawAccessoryArcForNextInPortrait(_ arcCoordinateX: CGFloat, _ node: Node<VisualLLNode>, _ arcCoordinateY: CGFloat, _ next: Node<VisualLLNode>) {
+    private func drawAccessoryArcForNextInPortrait(_ arcCoordinateX: CGFloat, _ node: Node<ModelType>, _ arcCoordinateY: CGFloat, _ next: Node<ModelType>) {
         let rightArcCenterPoint = CGPoint(x: (arcCoordinateX + ((3  * node.identifier.radius) / 2)), y: arcCoordinateY)
         
-        let rightArcPath = UIBezierPath(arcCenter: rightArcCenterPoint, radius: node.identifier.accessoryRadius, startAngle: VisualLLNode.defaultStartAngle, endAngle: VisualLLNode.defaultEndAngle, clockwise: true)
+        let rightArcPath = UIBezierPath(arcCenter: rightArcCenterPoint, radius: node.identifier.accessoryRadius, startAngle: ModelType.defaultStartAngle, endAngle: ModelType.defaultEndAngle, clockwise: true)
         
         next.identifier.arcColor.setFill()
         rightArcPath.fill()
     }
     
     
-    private func drawAccessoryArcForPreviousInLandscape(_ arcCoordinateX: CGFloat, _ arcCoordinateY: CGFloat, _ node: Node<VisualLLNode>, _ previous: Node<VisualLLNode>) {
+    private func drawAccessoryArcForPreviousInLandscape(_ arcCoordinateX: CGFloat, _ arcCoordinateY: CGFloat, _ node: Node<ModelType>, _ previous: Node<ModelType>) {
         let bottomArcCenterPoint = CGPoint(x: arcCoordinateX, y: (arcCoordinateY + ((3  * node.identifier.radius) / 2)))
         
-        let leftArcPath = UIBezierPath(arcCenter: bottomArcCenterPoint, radius: node.identifier.accessoryRadius, startAngle: VisualLLNode.defaultStartAngle, endAngle: VisualLLNode.defaultEndAngle, clockwise: false)
+        let leftArcPath = UIBezierPath(arcCenter: bottomArcCenterPoint, radius: node.identifier.accessoryRadius, startAngle: ModelType.defaultStartAngle, endAngle: ModelType.defaultEndAngle, clockwise: false)
         
         previous.identifier.arcColor.setFill()
         leftArcPath.fill()
     }
     
     
-    private func drawAccessoryArcForNextInLandscape(_ arcCoordinateX: CGFloat, _ arcCoordinateY: CGFloat, _ node: Node<VisualLLNode>, _ next: Node<VisualLLNode>) {
+    private func drawAccessoryArcForNextInLandscape(_ arcCoordinateX: CGFloat, _ arcCoordinateY: CGFloat, _ node: Node<ModelType>, _ next: Node<ModelType>) {
         let topArcCenterPoint = CGPoint(x: arcCoordinateX, y: (arcCoordinateY - ((3  * node.identifier.radius) / 2)))
         
-        let rightArcPath = UIBezierPath(arcCenter: topArcCenterPoint, radius: node.identifier.accessoryRadius, startAngle: VisualLLNode.defaultStartAngle, endAngle: VisualLLNode.defaultEndAngle, clockwise: true)
+        let rightArcPath = UIBezierPath(arcCenter: topArcCenterPoint, radius: node.identifier.accessoryRadius, startAngle: ModelType.defaultStartAngle, endAngle: ModelType.defaultEndAngle, clockwise: true)
         
         next.identifier.arcColor.setFill()
         rightArcPath.fill()
     }
     
-    private func drawLinkLineForPortrait(_ arcCoordinateX: CGFloat, _ arcCoordinateY: CGFloat, _ node: Node<VisualLLNode>) {
+    private func drawLinkLineForPortrait(_ arcCoordinateX: CGFloat, _ arcCoordinateY: CGFloat, _ node: Node<ModelType>) {
         let linkStartPoint = CGPoint(x: arcCoordinateX, y: (arcCoordinateY + node.identifier.radius + 5))
-        let linkEndPoint = CGPoint(x: arcCoordinateX, y: (arcCoordinateY + node.identifier.radius + VisualLLNode.defaultGapBetweenNodes - VisualLLNode.defaultLineGap))
+        let linkEndPoint = CGPoint(x: arcCoordinateX, y: (arcCoordinateY + node.identifier.radius + ModelType.defaultGapBetweenNodes - ModelType.defaultLineGap))
         
         let linePath = UIBezierPath()
         
         linePath.move(to: linkStartPoint)
         linePath.addLine(to: linkEndPoint)
         
-        VisualLLNode.defaultLinkColor.setStroke()
+        ModelType.defaultLinkColor.setStroke()
         linePath.stroke()
     }
     
-    private func drawLinkLineForLandscape(_ arcCoordinateX: CGFloat, _ node: Node<VisualLLNode>, _ arcCoordinateY: CGFloat) {
+    private func drawLinkLineForLandscape(_ arcCoordinateX: CGFloat, _ node: Node<ModelType>, _ arcCoordinateY: CGFloat) {
         let linkStartPoint = CGPoint(x: (arcCoordinateX + node.identifier.radius + 5), y: arcCoordinateY)
-        let linkEndPoint = CGPoint(x: (arcCoordinateX + node.identifier.radius + VisualLLNode.defaultGapBetweenNodes - VisualLLNode.defaultLineGap), y: arcCoordinateY)
+        let linkEndPoint = CGPoint(x: (arcCoordinateX + node.identifier.radius + ModelType.defaultGapBetweenNodes - ModelType.defaultLineGap), y: arcCoordinateY)
         
         let linePath = UIBezierPath()
         
         linePath.move(to: linkStartPoint)
         linePath.addLine(to: linkEndPoint)
         
-        VisualLLNode.defaultLinkColor.setStroke()
+        ModelType.defaultLinkColor.setStroke()
         linePath.stroke()
     }
     

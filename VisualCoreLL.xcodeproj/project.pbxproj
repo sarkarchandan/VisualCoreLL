@@ -22,7 +22,7 @@
 		174D5A321FE06B68007CF3AE /* TestableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174D5A311FE06B68007CF3AE /* TestableType.swift */; };
 		17D1798B1FE3081C009F2CFB /* PrototypeLLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1798A1FE3081C009F2CFB /* PrototypeLLView.swift */; };
 		17D1798D1FE30831009F2CFB /* PrototypeLLView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17D1798C1FE30831009F2CFB /* PrototypeLLView.xib */; };
-		17D1798F1FE30984009F2CFB /* VisualLLNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1798E1FE30984009F2CFB /* VisualLLNode.swift */; };
+		17D1798F1FE30984009F2CFB /* ModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1798E1FE30984009F2CFB /* ModelType.swift */; };
 		17D179931FE31615009F2CFB /* Bundle+VisualCoreLL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D179921FE31615009F2CFB /* Bundle+VisualCoreLL.swift */; };
 		17D179971FE32276009F2CFB /* PrototypeLLViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D179961FE32276009F2CFB /* PrototypeLLViewDelegate.swift */; };
 		17F232741FE3FD210094C837 /* PrototypeLLViewDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F232731FE3FD210094C837 /* PrototypeLLViewDrawable.swift */; };
@@ -85,7 +85,7 @@
 		174D5A311FE06B68007CF3AE /* TestableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestableType.swift; sourceTree = "<group>"; };
 		17D1798A1FE3081C009F2CFB /* PrototypeLLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeLLView.swift; sourceTree = "<group>"; };
 		17D1798C1FE30831009F2CFB /* PrototypeLLView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrototypeLLView.xib; sourceTree = "<group>"; };
-		17D1798E1FE30984009F2CFB /* VisualLLNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualLLNode.swift; sourceTree = "<group>"; };
+		17D1798E1FE30984009F2CFB /* ModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelType.swift; sourceTree = "<group>"; };
 		17D179921FE31615009F2CFB /* Bundle+VisualCoreLL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+VisualCoreLL.swift"; sourceTree = "<group>"; };
 		17D179961FE32276009F2CFB /* PrototypeLLViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeLLViewDelegate.swift; sourceTree = "<group>"; };
 		17F232731FE3FD210094C837 /* PrototypeLLViewDrawable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeLLViewDrawable.swift; sourceTree = "<group>"; };
@@ -196,7 +196,7 @@
 		174185781FDCAEDF00B1EF7C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				17D1798E1FE30984009F2CFB /* VisualLLNode.swift */,
+				17D1798E1FE30984009F2CFB /* ModelType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -393,7 +393,7 @@
 				174185441FDCAE1800B1EF7C /* MainViewController.swift in Sources */,
 				17D1798B1FE3081C009F2CFB /* PrototypeLLView.swift in Sources */,
 				174185421FDCAE1800B1EF7C /* AppDelegate.swift in Sources */,
-				17D1798F1FE30984009F2CFB /* VisualLLNode.swift in Sources */,
+				17D1798F1FE30984009F2CFB /* ModelType.swift in Sources */,
 				17D179931FE31615009F2CFB /* Bundle+VisualCoreLL.swift in Sources */,
 				17D179971FE32276009F2CFB /* PrototypeLLViewDelegate.swift in Sources */,
 				17F232741FE3FD210094C837 /* PrototypeLLViewDrawable.swift in Sources */,

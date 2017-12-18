@@ -1,5 +1,5 @@
 //
-//  VisualLLNode.swift
+//  ModelType.swift
 //  VisualCoreLL
 //
 //  Created by Chandan Sarkar on 14.12.17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VisualLLNode: Hashable,CustomStringConvertible  {
+class ModelType: Hashable,CustomStringConvertible  {
 
     let radius: CGFloat
     let arcColor: UIColor
@@ -18,7 +18,7 @@ class VisualLLNode: Hashable,CustomStringConvertible  {
         self.arcColor = arcColor
     }
     
-    static func ==(lhs: VisualLLNode, rhs: VisualLLNode) -> Bool {
+    static func ==(lhs: ModelType, rhs: ModelType) -> Bool {
         guard lhs === rhs else { return false }
         return true
     }

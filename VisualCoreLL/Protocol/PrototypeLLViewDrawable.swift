@@ -11,6 +11,6 @@ import CoreLL
 
 protocol  PrototypeLLViewDrawable: class {
     
-    var list: CoreLinkedList<VisualLLNode>! { get set }
+    var list: CoreLinkedList<ModelType>! { get set }
     
 }
