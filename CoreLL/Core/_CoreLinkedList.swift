@@ -151,18 +151,13 @@ class _CoreLinkedList<_Node: _CoreNode>: _CoreLinkedListType {
     
     func reversed() {
         guard count > 1 else { return }
-        var previous: _Node?
-        var current: _Node?
-        var next: _Node?
-        previous = nil
-        current = head
-        while current != nil {
-            next = current?.next
-            current?.next = previous
-            previous = current
-            current = next
+
+        var node: _Node? = head
+        while let currentNode = node {
+            node = currentNode.next
+            swap(&currentNode.next, &currentNode.previous)
+            head = currentNode
         }
-        head = previous!
     }
     
 }
