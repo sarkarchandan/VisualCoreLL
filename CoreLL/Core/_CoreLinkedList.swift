@@ -39,14 +39,16 @@ class _CoreLinkedList<_Node: _CoreNode>: _CoreLinkedListType {
     }
     
     func prepend(_ node: _Node) {
-        node.next = head
-        head.previous = node
+        let temp = head
+        node.next = temp
+        temp.previous = node
         head = node
     }
     
     func append(_ node: _Node) {
-        tail.next = node
-        node.previous = tail
+        let temp = tail
+        temp.next = node
+        node.previous = temp
     }
     
     subscript(_ node: _Node) -> Int? {

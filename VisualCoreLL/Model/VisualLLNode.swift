@@ -31,8 +31,12 @@ class VisualLLNode: Hashable,CustomStringConvertible  {
         return "Arc - Radius: \(radius) Color: \(arcColor)".hashValue
     }
     
-    static let startAngle: CGFloat = 0
-    static let endAngle: CGFloat = 2 * .pi
+    var accessoryRadius: CGFloat {
+        return radius / 2
+    }
+    
+    static let defaultStartAngle: CGFloat = 0
+    static let defaultEndAngle: CGFloat = 2 * .pi
     static let defaultGapBetweenNodes: CGFloat = 30.0
     static let defaultLinkColor: UIColor = .darkGray
     static let defaultLineGap: CGFloat = 5.0
