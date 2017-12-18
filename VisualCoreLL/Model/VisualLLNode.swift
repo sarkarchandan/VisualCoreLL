@@ -7,18 +7,14 @@
 //
 
 import UIKit
-import CoreGraphics
-import CoreLL
 
 class VisualLLNode: Hashable,CustomStringConvertible  {
 
     let radius: CGFloat
     let arcColor: UIColor
-    let lineWidth: CGFloat
     
-    init(radius: CGFloat, lineWidth: CGFloat ,arcColor: UIColor) {
+    init(radius: CGFloat,arcColor: UIColor) {
         self.radius = radius
-        self.lineWidth = lineWidth
         self.arcColor = arcColor
     }
     
@@ -37,5 +33,5 @@ class VisualLLNode: Hashable,CustomStringConvertible  {
     
     static let startAngle: CGFloat = 0
     static let endAngle: CGFloat = 2 * .pi
-    static let gap: CGFloat = 10.0
+    static let defaultGapBetweenNodes: CGFloat = 20.0
 }

@@ -90,5 +90,7 @@ public class CoreLinkedList<NodeType: Hashable>: _CoreLinkedListType {
         coreLinkedList.reversed()
     }
     
-    var coreLinkedList: _CoreLinkedList<Node<NodeType>>
+    private var coreLinkedList: _CoreLinkedList<Node<NodeType>>
 }
+
+

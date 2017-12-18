@@ -18,6 +18,10 @@ class MainViewController: UIViewController,PrototypeLLViewDelegate {
         setupDrawableView()
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        detectDeviceOrientation(size)
+    }
+    
     private func setupNavigationController() {
         navigationItem.title = "Vulcan"
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -25,47 +29,51 @@ class MainViewController: UIViewController,PrototypeLLViewDelegate {
     }
     
     private func setupDrawableView() {
-        let prototypeView = Bundle.visualCoreBundle.loadNibNamed(PrototypeLLView.nibName, owner: nibName, options: nil)!.first as! PrototypeLLView
-        prototypeView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(prototypeView)
+        let prototypeLLView = Bundle.visualCoreBundle.loadNibNamed(PrototypeLLView.nibName, owner: nibName, options: nil)!.first as! PrototypeLLView
+        prototypeLLView.translatesAutoresizingMaskIntoConstraints = false
+        self.prototypeLLView = prototypeLLView
+        view.addSubview(prototypeLLView)
         
         if #available(iOS 11.0, *) {
             let guide = view.safeAreaLayoutGuide
-            prototypeView.leadingAnchor.constraint(equalTo: guide.leadingAnchor).isActive = true
-            prototypeView.trailingAnchor.constraint(equalTo: guide.trailingAnchor).isActive = true
-            prototypeView.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
-            prototypeView.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
+            prototypeLLView.leadingAnchor.constraint(equalTo: guide.leadingAnchor).isActive = true
+            prototypeLLView.trailingAnchor.constraint(equalTo: guide.trailingAnchor).isActive = true
+            prototypeLLView.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
+            prototypeLLView.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
         } else {
-            prototypeView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-            prototypeView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-            prototypeView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-            prototypeView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+            prototypeLLView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+            prototypeLLView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+            prototypeLLView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+            prototypeLLView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         }
         
-        prototypeView.list = list
-        prototypeView.delegate = self
+        prototypeLLView.list = list
+        detectDeviceOrientation(view.bounds.size)
+        prototypeLLView.delegate = self
     }    
-    //MARK: Implementation - PrototypeLLViewDatasource
-    func prepareListForDisplay() {
+    
+    private func prepareListForDisplay() {
         
-        let drawableNode1 = Node(with: VisualLLNode(radius: 40.0, lineWidth: 3.0, arcColor: .red))
+        let drawableNode1 = Node(with: VisualLLNode(radius: 40.0, arcColor: .red))
         
-        let drawableNode2 = Node(with: VisualLLNode(radius: 40.0, lineWidth: 3.0, arcColor: .green))
+        let drawableNode2 = Node(with: VisualLLNode(radius: 40.0, arcColor: .green))
         
-        let drawableNode3 = Node(with: VisualLLNode(radius: 40.0, lineWidth: 3.0, arcColor: .blue))
+        let drawableNode3 = Node(with: VisualLLNode(radius: 40.0, arcColor: .blue))
         
-        let drawableNode4 = Node(with: VisualLLNode(radius: 40.0, lineWidth: 3.0, arcColor: .magenta))
+        let drawableNode4 = Node(with: VisualLLNode(radius: 40.0, arcColor: .magenta))
         
-        let drawableNode5 = Node(with: VisualLLNode(radius: 40.0, lineWidth: 3.0, arcColor: .cyan))
+        let drawableNode5 = Node(with: VisualLLNode(radius: 40.0, arcColor: .cyan))
         
-        let drawableNode6 = Node(with: VisualLLNode(radius: 40.0, lineWidth: 3.0, arcColor: .darkGray))
+        let drawableNode6 = Node(with: VisualLLNode(radius: 40.0,arcColor: .darkGray))
         
         let list = CoreLinkedList(with: drawableNode1)
+        
         list.append(drawableNode2)
         list.append(drawableNode3)
         list.append(drawableNode4)
         list.append(drawableNode5)
         list.append(drawableNode6)
+        
         self.list = list
     }
     
@@ -75,6 +83,15 @@ class MainViewController: UIViewController,PrototypeLLViewDelegate {
         view.list = list
     }
     
+    private func detectDeviceOrientation(_ size: CGSize) {
+        if size.height > size.width {
+            prototypeLLView.orientation = .portrait
+        }else {
+            prototypeLLView.orientation = .landscape
+        }
+    }
+    
+    private var prototypeLLView: PrototypeLLView!
     private var list: CoreLinkedList<VisualLLNode>!
 }
 
