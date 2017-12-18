@@ -59,6 +59,7 @@ class PrototypeLLView: UIView,PrototypeLLViewDrawable {
             let node = list[index]!
             let center = CGPoint(x: arcCoordinateX, y: arcCoordinateY)
             drawMainArcForNode(center, node)
+            drawCrossInMainArcForNode(node, arcCoordinateX, arcCoordinateY)
             
             switch orientation {
             case .portrait:
@@ -107,6 +108,30 @@ class PrototypeLLView: UIView,PrototypeLLViewDrawable {
         let arcPath = UIBezierPath(arcCenter: center, radius: node.identifier.radius, startAngle: ModelType.defaultStartAngle, endAngle: ModelType.defaultEndAngle, clockwise: true)
         node.identifier.arcColor.setFill()
         arcPath.fill()
+    }
+    
+    private func drawCrossInMainArcForNode(_ node: Node<ModelType>, _ arcCoordinateX: CGFloat, _ arcCoordinateY: CGFloat) {
+        var path: UIBezierPath
+
+        ModelType.defaultCrossColor.setStroke()
+        let crossLength = node.identifier.crossLengthFromCenter
+        let hCrossStartPoint = CGPoint(x: (arcCoordinateX - crossLength), y: arcCoordinateY)
+        let hCrossEndPoint = CGPoint(x: (arcCoordinateX + crossLength), y: arcCoordinateY)
+        
+        let vCrossStartPoint = CGPoint(x: arcCoordinateX, y: (arcCoordinateY - crossLength))
+        let vCrossEndPoint = CGPoint(x: arcCoordinateX, y: (arcCoordinateY + crossLength))
+        
+        path = UIBezierPath()
+        path.move(to: hCrossStartPoint)
+        path.addLine(to: hCrossEndPoint)
+        path.lineWidth = ModelType.defaultCrossLineWidth
+        path.stroke()
+        
+        path = UIBezierPath()
+        path.move(to: vCrossStartPoint)
+        path.addLine(to: vCrossEndPoint)
+        path.lineWidth = ModelType.defaultCrossLineWidth
+        path.stroke()
     }
     
     
