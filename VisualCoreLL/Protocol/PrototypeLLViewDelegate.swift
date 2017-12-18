@@ -10,5 +10,5 @@ import Foundation
 
 protocol PrototypeLLViewDelegate: class {
     
-    func prototypeLLViewDrawableOrderDidChange(_ view: PrototypeLLView)
+    func prototypeLLViewShouldReload(_ view: PrototypeLLView)
 }

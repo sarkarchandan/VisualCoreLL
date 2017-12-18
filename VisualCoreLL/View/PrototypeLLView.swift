@@ -38,32 +38,59 @@ class PrototypeLLView: UIView,PrototypeLLViewDrawable {
     
     override func draw(_ rect: CGRect) {
         
-        var coordinateX: CGFloat
-        var coordinateY: CGFloat
+        var arcCoordinateX: CGFloat
+        var arcCoordinateY: CGFloat
         
         switch orientation {
         case .portrait:
-            coordinateX = bounds.midX
-            coordinateY = 50.0
+            
+            arcCoordinateX = bounds.midX
+            arcCoordinateY = 50.0
+            
         case .landscape:
-            coordinateX = 120.0
-            coordinateY = bounds.midY
+            
+            arcCoordinateX = 120.0
+            arcCoordinateY = bounds.midY
         }
         
         //MARK: TODO : Build framework capability to iterate over Linked List
-        //Nodes in O(n).
+        //Nodes in O(n). Underlying operational strategy is having quadratic.
         for index in 0..<list.count {
             let node = list[index]!
-            let center = CGPoint(x: coordinateX, y: coordinateY)
-            let path = UIBezierPath(arcCenter: center, radius: node.identifier.radius, startAngle: VisualLLNode.startAngle, endAngle: VisualLLNode.endAngle, clockwise: true)
+            let center = CGPoint(x: arcCoordinateX, y: arcCoordinateY)
+            let arcPath = UIBezierPath(arcCenter: center, radius: node.identifier.radius, startAngle: VisualLLNode.startAngle, endAngle: VisualLLNode.endAngle, clockwise: true)
             node.identifier.arcColor.setFill()
-            path.fill()
+            arcPath.fill()
+            
+            guard index != list.count - 1 else { continue }
+            var linePath: UIBezierPath
+            
+            switch orientation{
+                
+            case .portrait:
+                let lineStartPoint = CGPoint(x: arcCoordinateX, y: (arcCoordinateY + node.identifier.radius + 5))
+                let lineEndPoint = CGPoint(x: arcCoordinateX, y: (arcCoordinateY + node.identifier.radius + VisualLLNode.defaultGapBetweenNodes - 5))
+                linePath = UIBezierPath()
+                linePath.move(to: lineStartPoint)
+                linePath.addLine(to: lineEndPoint)
+                
+            case .landscape:
+                let lineStartPoint = CGPoint(x: (arcCoordinateX + node.identifier.radius + 5), y: arcCoordinateY)
+                let lineEndPoint = CGPoint(x: (arcCoordinateX + node.identifier.radius + VisualLLNode.defaultGapBetweenNodes - 5), y: arcCoordinateY)
+                linePath = UIBezierPath()
+                linePath.move(to: lineStartPoint)
+                linePath.addLine(to: lineEndPoint)
+                
+            }
+            
+            VisualLLNode.defaultLinkColor.setStroke()
+            linePath.stroke()
             
             switch orientation {
             case .portrait:
-                coordinateY += 2 * node.identifier.radius + VisualLLNode.defaultGapBetweenNodes
+                arcCoordinateY += 2 * node.identifier.radius + VisualLLNode.defaultGapBetweenNodes
             case .landscape:
-                coordinateX += 2 * node.identifier.radius + VisualLLNode.defaultGapBetweenNodes
+                arcCoordinateX += 2 * node.identifier.radius + VisualLLNode.defaultGapBetweenNodes
             }
         }
     }
@@ -73,7 +100,6 @@ class PrototypeLLView: UIView,PrototypeLLViewDrawable {
     static var nibName: String {
         return "PrototypeLLView"
     }
-    
     
     private func registerSwipeGestureRecognizer() {
         var directions: [UISwipeGestureRecognizerDirection]
@@ -86,8 +112,10 @@ class PrototypeLLView: UIView,PrototypeLLViewDrawable {
         }
         
         let _ = directions.map {
-            
-            let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swiped(_:)))
+            if let _ = swipeGestureRecognizer {
+                swipeGestureRecognizer = nil
+            }
+            swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swiped(_:)))
             swipeGestureRecognizer.direction = $0
             self.addGestureRecognizer(swipeGestureRecognizer)
         }
@@ -97,12 +125,17 @@ class PrototypeLLView: UIView,PrototypeLLViewDrawable {
     private func swiped(_ gesture: UISwipeGestureRecognizer) {
         
         switch orientation {
+            
         case .portrait:
             guard gesture.direction == .up || gesture.direction == .down else { return }
-            delegate.prototypeLLViewDrawableOrderDidChange(self)
+            delegate.prototypeLLViewShouldReload(self)
+            
         case .landscape:
             guard gesture.direction == .left || gesture.direction == .right else { return }
-            delegate.prototypeLLViewDrawableOrderDidChange(self)
+            delegate.prototypeLLViewShouldReload(self)
+            
         }
     }
+    
+    private var swipeGestureRecognizer: UISwipeGestureRecognizer!
 }
